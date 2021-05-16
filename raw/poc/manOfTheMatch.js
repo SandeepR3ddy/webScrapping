@@ -17,7 +17,7 @@ function extractHtml(html)
 {
 let selectorTool = cheerio.load(html);
 let allLinkElems = selectorTool(".match-info-link-FIXTURES");
-console.log(allLinkElems.length);
+//console.log(allLinkElems.length);
 for(let i = 0;i < allLinkElems.length;i++)
 {
     let allLinks = selectorTool(allLinkElems[i]).attr("href");
@@ -36,6 +36,7 @@ function print(IndividualLink)
 function getManofMatch(html)
 {
  let selectorTool = cheerio.load(html);
- let name = selectorTool(".best-player-name").text();  
- console.log(name);
+ let name = selectorTool(".best-player-name").text();
+ let teamName = selectorTool(".best-player-team-name").text();  
+ console.log(name+" of "+teamName);
 }
