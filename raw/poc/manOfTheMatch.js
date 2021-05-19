@@ -20,18 +20,18 @@ let allLinkElems = selectorTool(".match-info-link-FIXTURES");
 //console.log(allLinkElems.length);
 for(let i = 0;i < allLinkElems.length;i++)
 {
-    let allLinks = selectorTool(allLinkElems[i]).attr("href");
-    allLinks = "https://www.espncricinfo.com" + allLinks;
+     let allLinks = selectorTool(allLinkElems[i]).attr("href");
+     allLinks = "https://www.espncricinfo.com" + allLinks;
      print(allLinks);
 }
 }
 function print(IndividualLink)
 {
-  request(IndividualLink,cb1);
-  function cb1(error,response,html)
+  request(IndividualLink, function (error,response,html)
   {
       getManofMatch(html);
   }
+  )
 }
 function getManofMatch(html)
 {
